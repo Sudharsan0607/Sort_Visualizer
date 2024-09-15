@@ -1,0 +1,261 @@
+:root {
+    --primary-color: #2e302f;
+    --secondary-color: #060606;
+    --footer-icon-color: #ffffff;
+    --footer-icon-hover-color: #ffff00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #242627;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    margin-top: 3em;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 1.5em;
+    width: 300px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    width: 100%;
+}
+
+.navbar .title {
+    margin-bottom: auto;
+}
+
+.navbar a,
+.navbar select {
+    background-color: #FEE715;
+    color: #0d0d0d;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: rgb(255, 74, 74) 3px 3px 3px;
+}
+
+.navbar a {
+    margin-top: 1em;
+}
+
+.navbar a:hover,
+.navbar select:hover {
+    background-color: whitesmoke;
+    color: var(--secondary-color);
+}
+
+.navbar select {
+    background-color: #FEE715;
+    color: #0d0d0d;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.navbar select option {
+    background-color: #b8982e;
+    color: #fff;
+}
+
+.navbar select option:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.navbar select::-ms-expand {
+    display: none;
+}
+
+.center {
+    margin-right: 320px;
+    margin-left: 10px;
+    margin-top: 2em;
+    flex: 1;
+    box-shadow: rgba(219, 194, 31, 0.16) 6px 6px 6px;
+    height: 500px;
+    width: calc(100% - 320px);
+    max-height: 731px;
+    overflow: auto;
+    padding-left: 10px;
+    background-color: #101820;
+    border-radius: 2%;
+    transition: width 0.3s ease;
+}
+
+.array {
+    display: flex;
+    align-items: flex-start;
+    min-height: 100%;
+    height: 100%;
+    padding: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cell {
+    display: flex;
+    align-items: flex-start;
+    flex: 0.5;
+    width: 0.000001%;
+    margin: 1px;
+    background-color: #fcfaf4;
+    resize: horizontal;
+    position: relative;
+    transition: all 0.4s ease-in;
+}
+
+.cell.done {
+    background-color: #FEE715;
+    border-color: #0a0a0a;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+
+.cell.visited {
+    border-color: #6184d8;
+    background-color: #6184d8;
+    color: white;
+    transition: 0.5s;
+}
+
+.cell.current {
+    border-color: #50c5b7;
+    background-color: #50c5b7;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+
+.cell.min {
+    background-color: #ff1493;
+    border-color: #ff1493;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+
+footer {
+    text-align: center;
+    font-size: 18px;
+    color: var(--primary-color);
+    padding: 1.6em;
+}
+
+.footer .link {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--footer-icon-color);
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.footer .link i {
+    font-size: 24px;
+}
+
+.footer .link:hover {
+    color: var(--footer-icon-hover-color);
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        gap: 1em;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    .navbar * {
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 18px;
+    }
+
+    .center {
+        width: calc(100% - 70px);
+        margin-right: 0;
+    }
+
+    .nav-container {
+        width: 100%;
+        position: relative;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.5em;
+    }
+
+    .navbar a,
+    .navbar select {
+        width: auto;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .center {
+        width: 100%;
+        margin: 0;
+    }
+}
